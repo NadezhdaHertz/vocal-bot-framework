@@ -23,14 +23,14 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <div className={cn("mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4", className)}>
       <div>
-        <h1 className="text-2xl font-medium text-era-black">{title}</h1>
+        <h1 className="text-2xl font-medium text-foreground">{title}</h1>
         {description && (
-          <p className="mt-1 text-era-dark-gray">{description}</p>
+          <p className="mt-1 text-muted-foreground">{description}</p>
         )}
       </div>
       
       {action && (
-        <Button onClick={action.onClick} className="btn-primary shrink-0">
+        <Button onClick={action.onClick} className="btn-primary shrink-0 rounded-full">
           {action.icon}
           {action.label}
         </Button>

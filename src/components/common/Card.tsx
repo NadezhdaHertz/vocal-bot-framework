@@ -11,7 +11,7 @@ export const Card: React.FC<CardProps> = ({ children, className, ...props }) => 
   return (
     <div 
       className={cn(
-        "bg-white rounded-lg shadow-sm border border-era-gray/20 overflow-hidden transition-all duration-300 hover:shadow-md",
+        "bg-card rounded-xl shadow-apple-card border border-border/40 overflow-hidden transition-all duration-300 hover:shadow-apple-hover",
         className
       )}
       {...props}
@@ -29,7 +29,7 @@ interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export const CardHeader: React.FC<CardHeaderProps> = ({ children, className, ...props }) => {
   return (
     <div
-      className={cn("p-4 border-b border-era-gray/20", className)}
+      className={cn("p-4 border-b border-border/40", className)}
       {...props}
     >
       {children}
@@ -58,7 +58,7 @@ interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {
 export const CardFooter: React.FC<CardFooterProps> = ({ children, className, ...props }) => {
   return (
     <div
-      className={cn("p-4 border-t border-era-gray/20", className)}
+      className={cn("p-4 border-t border-border/40", className)}
       {...props}
     >
       {children}

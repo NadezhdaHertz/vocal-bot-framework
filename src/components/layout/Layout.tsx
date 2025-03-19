@@ -28,7 +28,7 @@ const Layout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-era-gray">
+    <div className="min-h-screen bg-background">
       <Sidebar
         collapsed={sidebarCollapsed}
         toggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)}
