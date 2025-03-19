@@ -19,7 +19,7 @@ const MOCK_CAMPAIGNS = [
   { 
     id: '1', 
     name: 'Опрос удовлетворенности', 
-    status: 'active', 
+    status: 'active' as const, 
     calls: 356, 
     answers: 242, 
     lastActivity: '2023-12-10' 
@@ -27,7 +27,7 @@ const MOCK_CAMPAIGNS = [
   { 
     id: '2', 
     name: 'Подтверждение визита', 
-    status: 'inactive', 
+    status: 'inactive' as const, 
     calls: 1024, 
     answers: 875, 
     lastActivity: '2023-12-05' 
@@ -35,7 +35,7 @@ const MOCK_CAMPAIGNS = [
   { 
     id: '3', 
     name: 'Напоминание о платеже', 
-    status: 'active', 
+    status: 'active' as const, 
     calls: 542, 
     answers: 398, 
     lastActivity: '2023-12-08' 
@@ -43,7 +43,7 @@ const MOCK_CAMPAIGNS = [
   { 
     id: '4', 
     name: 'Информирование о новых услугах', 
-    status: 'active', 
+    status: 'active' as const, 
     calls: 89, 
     answers: 65, 
     lastActivity: '2023-12-12' 
