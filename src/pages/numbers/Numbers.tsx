@@ -31,17 +31,17 @@ const Numbers: React.FC = () => {
         description="Управление базами номеров для обзвона"
         action={{
           label: "Создать список",
-          icon: <Plus size={16} />,
+          icon: <Plus size={18} />,
           onClick: () => navigate('/numbers/create')
         }}
       />
       
       <div className="mb-6">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={16} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-era-dark-gray" size={18} />
           <Input
             placeholder="Поиск списков..."
-            className="pl-10 bg-card rounded-full h-10"
+            className="pl-10 bg-white"
           />
         </div>
       </div>
@@ -68,10 +68,10 @@ const NumberListCard: React.FC<NumberListCardProps> = ({ list }) => {
   const navigate = useNavigate();
   
   return (
-    <Card className="h-full flex flex-col hover:border-era-blue/40 transition-all duration-300">
+    <Card className="h-full flex flex-col hover:border-era-blue/40 group">
       <CardHeader className="flex justify-between items-start">
         <h3 
-          className="font-medium text-foreground hover:text-era-blue cursor-pointer truncate transition-colors"
+          className="font-medium text-era-black hover:text-era-blue cursor-pointer truncate"
           onClick={() => navigate(`/numbers/${list.id}`)}
         >
           {list.name}
@@ -79,11 +79,11 @@ const NumberListCard: React.FC<NumberListCardProps> = ({ list }) => {
         
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+            <Button variant="ghost" size="icon" className="h-8 w-8">
               <MoreVertical size={16} />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-48 shadow-apple">
+          <DropdownMenuContent align="end" className="w-48 bg-white">
             <DropdownMenuItem onClick={() => navigate(`/numbers/${list.id}`)}>
               Редактировать
             </DropdownMenuItem>
@@ -100,22 +100,22 @@ const NumberListCard: React.FC<NumberListCardProps> = ({ list }) => {
         <div className="space-y-4">
           <div>
             <p className="text-sm text-muted-foreground">Количество номеров</p>
-            <p className="text-foreground font-medium flex items-center gap-1 mt-1">
-              <Users size={14} />
+            <p className="text-era-dark-gray font-medium flex items-center gap-1">
+              <Users size={16} />
               {list.count}
             </p>
           </div>
           
           <div>
             <p className="text-sm text-muted-foreground">Последнее обновление</p>
-            <p className="text-foreground mt-1">{list.lastUpdated}</p>
+            <p className="text-era-dark-gray">{list.lastUpdated}</p>
           </div>
         </div>
       </CardContent>
       
-      <div className="p-4 border-t border-border/40">
+      <div className="p-4 border-t border-era-gray/20">
         <Button 
-          className="w-full rounded-full"
+          className="w-full btn-primary"
           onClick={() => navigate(`/numbers/${list.id}`)}
         >
           Просмотр списка

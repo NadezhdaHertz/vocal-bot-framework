@@ -21,29 +21,29 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
   return (
     <div 
       className={cn(
-        "fixed left-0 top-0 h-full bg-card border-r border-border/40 shadow-sm transition-all duration-300 z-10",
+        "fixed left-0 top-0 h-full bg-white border-r border-era-gray shadow-sm transition-all duration-300 z-10",
         collapsed ? "w-[70px]" : "w-[250px]"
       )}
     >
       <div className="flex flex-col h-full">
-        <div className="p-4 border-b border-border/40 flex items-center justify-between">
+        <div className="p-4 border-b border-era-gray flex items-center justify-between">
           {!collapsed && (
             <div className="text-xl font-semibold text-era-blue">Эра</div>
           )}
           <button 
             onClick={toggleSidebar}
-            className="p-1 rounded-md hover:bg-muted transition-colors ml-auto"
+            className="p-1 rounded-md hover:bg-era-gray transition-colors ml-auto"
           >
-            {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+            {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           </button>
         </div>
         
-        <nav className="flex-1 p-3 space-y-1">
-          <NavItem to="/projects" icon={<Folder size={18} />} label="Проекты" collapsed={collapsed} />
-          <NavItem to="/campaigns" icon={<PhoneCall size={18} />} label="Кампании" collapsed={collapsed} />
-          <NavItem to="/voice" icon={<Mic size={18} />} label="Голос" collapsed={collapsed} />
-          <NavItem to="/numbers" icon={<Phone size={18} />} label="Списки номеров" collapsed={collapsed} />
-          <NavItem to="/statistics" icon={<BarChart2 size={18} />} label="Статистика" collapsed={collapsed} />
+        <nav className="flex-1 p-2 space-y-1">
+          <NavItem to="/projects" icon={<Folder />} label="Проекты" collapsed={collapsed} />
+          <NavItem to="/campaigns" icon={<PhoneCall />} label="Кампании" collapsed={collapsed} />
+          <NavItem to="/voice" icon={<Mic />} label="Голос" collapsed={collapsed} />
+          <NavItem to="/numbers" icon={<Phone />} label="Списки номеров" collapsed={collapsed} />
+          <NavItem to="/statistics" icon={<BarChart2 />} label="Статистика" collapsed={collapsed} />
         </nav>
       </div>
     </div>
